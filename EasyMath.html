@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Combo&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Mali:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&display=swap');
+
+body  {
+  background-image: url("m4kVK1.jpg");
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.Title{
+  font-family:passion one;
+ font-size: 100px;
+  margin-bottom: 15px;
+  color: #006600;
+}
+.text{
+	font-family:mali;
+	font-size: 20px;
+  margin-bottom: 15px;
+  color: #00FF33;
+}
+
+
+.container {
+
+  width: 800px;
+  margin: 100px auto 100px;
+  background-color: #fff;
+  padding: 0 20px 20px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.075);
+  -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.075);
+  -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.075);
+  text-align: center;
+}
+
+.error {
+  background-color: red;
+}
+.Input {
+  position: relative;
+  width: 100%
+}
+
+.Input-text {
+  display: block;
+  margin: 0;
+  padding: 20 px 10 px);
+  color: inherit;
+  width: 100%;
+  font-family: mali;
+  text-align:center;
+  font-size: 10 px;
+
+  border: none;
+  border-radius: 0.4rem;
+  transition: box-shadow var(--transitionDuration);
+}
+
+.Input-text::placeholder {
+  color: #B0BEC5;
+}
+
+.Input-text:focus {
+  outline: none;
+  box-shadow: 0.2rem 0.8rem 1.6rem var(--colorPrimary600);
+}
+.btngreen {
+  background: #5eff42;
+  border: 1px solid #5eff42;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.btngreen:hover,
+.btngreen:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #5eff42;
+}
+.btnred {
+  background: #FF4742;
+  border: 1px solid #FF4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 20px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.btnred:hover,
+.btnred:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #FF4742;
+}
+
+.btnred:active ,.btngreen:active ,.btngray:active ,.btnorange:active {
+  opacity: .5;
+}
+
+.btnorange {
+  background: #ffdc42;
+  border: 1px solid #ffdc42;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+.btnorange:hover,
+.btnorange:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #ffdc42;
+}
+
+
+
+</style>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+</script>
+
+
+<script>
+
+
+
+
+$(document).ready(function(){
+	function calculate() {
+        if($("#num1").val()=="" || $("#num2").val()=="")
+        	return;
+      	num1=parseInt($("#num1").val());
+	  	num2=parseInt($("#num2").val());
+    	if($("#oper").val()=="plus")
+        	$("#num3").val(num1+num2);
+    	else if($("#oper").val()=="minus")
+        	$("#num3").val(num1-num2);
+    	else if($("#oper").val()=="multi")
+        	$("#num3").val(num1*num2);
+    	else if($("#oper").val()=="div")
+   			if(num2!=0)
+	        	$("#num3").val(num1/num2);
+        	else {
+	        	$("#num2").addClass("error");
+	        	$("#num3").val("");
+        	}
+    	else if($("#oper").val()=="mod")
+   			if(num2!=0)
+	        	$("#num3").val(num1%num2);
+        	else {
+	        	$("#num2").addClass("error");
+	        	$("#num3").val("");
+        	}
+			
+    }
+ var count = 0;
+	var keyup = 0;
+	$("#random").click(function(){
+ $("#num1").val(
+      (document.getElementById("num1").innerHTML = Math.floor(Math.random() * 1000)+1));
+    $("#num2").val(
+      (document.getElementById("num2").innerHTML = Math.floor(Math.random() * 100)+1));
+        var opt = ["plus", "minus", "multi", "div", "mod"];
+        var randopt = Math.floor((Math.random() * 5));
+        $("#oper").val(opt[randopt]).change();
+		count=1;
+  });
+  
+  
+  $("#check").on("click",function(){
+		calculate();
+		if(count==1){
+			if($("#input").val() == $("#num3").val()){
+			
+			alert("เก่งมาก คุณตอบถูก")
+			document.getElementById("score").innerHTML = score;
+			count--;
+			}else{
+				alert("เสียใจด้วย คำตอบของคุณไม่ถูกต้อง")
+				count--;
+			}
+		}
+	
+  });
+  
+  $("#num1, #num2, #oper").on("keyup change",function(){
+  		if($("#oper").val()!="div" || $("#num2").val()!=0)
+        	keyup=1;
+		calculate();
+		$("#num3").val("");
+		$("#ans").val("");
+       
+});
+  $("#clear").click(function(){
+    $("#num1").val("");
+    $("#num2").val("");
+    $("#num3").val("");
+    $("#oper").val("plus");
+  	$("#num2").removeClass("error");
+	$("#ans").val("");
+     
+  });
+  
+});
+</script>
+</head>
+<body>
+	<div class="container">
+		<h1 class ="Title">EASY MATH</h1>
+		<input type="text" id="num1" value="" size="5"> 
+	<select id="oper">
+		<option value="plus">+</option>
+		<option value="minus">-</option>
+		<option value="multi">x</option>
+		<option value="div">/</option>
+		<option value="mod">%</option>
+	</select> 
+		<input type="text" id="num2" value="" size="5">
+		<span>=</span><span value = ""></span>
+		<input type="text" id="num3" value="" size="5"> 
+		
+			<div class="Input">
+			<br>
+				<input type="text" id="input" class="Input-text" placeholder="พิมพ์คำตอบที่ถูกต้องตรงนี้">
+				
+			</div>
+
+			<br>
+		<button id = "random" class="btnorange" ">Random</button>
+		<button id = "check" class="btngreen" >Check</button>
+		<button id="clear" type="button" class="btnred">Erase </button>
+	</div>
+</body>
+</html>
